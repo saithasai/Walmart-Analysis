@@ -26,41 +26,47 @@ alter table walmart_analysis add column month_name text;
 update walmart_analysis set month_name=monthname(date);
 select * from walmart_analysis;
 
-#-- How many unique cities does the data have?
+-----GENERIC QUESTION-----
+#Q1. How many unique cities does the data have?
 select distinct city,count(*) from walmart_analysis
 group by city;
 
-#-- In which city is each branch?
+#Q2. In which city is each branch?
 select distinct city,branch from walmart_analysis;
 
-#-- What is the total revenue by month?
+--------PRODUCT----------
+	
+#Q1. What is the total revenue by month?
 select sum(total) as total_revenue,month_name from walmart_analysis
 group by month_name
 order by total_revenue desc;
 
-#-- What month had the largest COGS?
+#Q2. What month had the largest COGS?
 select month_name,sum(cogs) as cogs from walmart_analysis
 group by month_name
 order by cogs desc;
 
-#-- What is the city with the largest revenue?
+#Q3. What is the city with the largest revenue?
 select sum(total) as total_revenue,city from walmart_analysis
 group by city
 order by total_revenue desc;
 
-#-- Which branch sold more products than average product sold?
+#Q4. Which branch sold more products than average product sold?
 select branch,sum(Quantity) as qty from walmart_analysis
 group by branch
 having qty>(select avg(Quantity) from walmart_analysis);
 									
-# whats the most common payment method
+#Q5. what is the most common payment method
 select payment,count(*) from walmart_analysis
 group by payment;
+
+------SALES-----
 
 #number of sales made in each time of the day per weekday
 select Parts_of_the_day,count(*) from walmart_analysis
 group by Parts_of_the_day;
 
+-------CUSTOMER------
 #whats the gender distribution per branch
 select gender,count(*) from walmart_analysis
 where branch="C"
@@ -77,7 +83,7 @@ where branch="A"
 group by Parts_of_the_day
 order by avg(rating) desc;
 
-#-- Which day of the week has the best avg ratings?
+#-- Which day of the week has the best average ratings?
 select day_name,avg(Rating) from walmart_analysis
 group by day_name
 order by avg(Rating) desc;
@@ -100,7 +106,7 @@ alter table walmart_analysis
 modify column date date;
 describe walmart_analysis;
  
-#how long have been they working by adding another column
+#how long have been they working (by adding another column)
 alter table walmart_analysis
 add column days_stayed int;
 update walmart_analysis set days_stayed=timestampdiff(day,date,curdate());
