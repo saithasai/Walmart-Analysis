@@ -1,6 +1,6 @@
-drop database if exists project1_sql;
-create database  project1_sql;
-use project1_sql;
+drop database if exists walmart_proj;
+create database walmart_proj;
+use walmart_proj;
 select * from walmart_analysis;
 
 #adding one more column
@@ -62,59 +62,68 @@ group by payment;
 
 ------SALES-----
 
-#number of sales made in each time of the day per weekday
+#Q1. Number of sales made in each time of the day per weekday
 select Parts_of_the_day,count(*) from walmart_analysis
 group by Parts_of_the_day;
 
+#Q2. How much sales in each month
+select month(date),count(*) as Total_sales from walmart_analysis
+group by month(date)
+	
 -------CUSTOMER------
-#whats the gender distribution per branch
+	
+#Q1. whats the gender distribution per branch
 select gender,count(*) from walmart_analysis
 where branch="C"
 group by gender;
 
-#-- Which time of the day do customers give most ratings?
+#Q2. Which time of the day do customers give most ratings?
 select Parts_of_the_day,avg(rating) from walmart_analysis
 group by Parts_of_the_day
 order by avg(rating) desc;
 
-#-- Which time of the day do customers give most ratings per branch?
+#Q3. Which time of the day do customers give most ratings per branch?
 select Parts_of_the_day,avg(rating) from walmart_analysis
 where branch="A"
 group by Parts_of_the_day
 order by avg(rating) desc;
 
-#-- Which day of the week has the best average ratings?
-select day_name,avg(Rating) from walmart_analysis
-group by day_name
-order by avg(Rating) desc;
-
-#-- Which day of the week has the best average ratings per branch?
-select day_name,avg(Rating) from walmart_analysis
-where branch="A"
-group by day_name
-order by avg(Rating) desc;
-
-#-- What is the gender of most of the customers?
+#Q4. What is the gender of most of the customers?
 select gender,count(*) from walmart_analysis
 group by gender;
 
-#replacing payment column by payment_mode
-alter table walmart_analysis change column Payment Payment_mode text;
+#Q5. Which day of the week has the best average ratings?
+select day_name,avg(Rating) from walmart_analysis
+group by day_name
+order by avg(Rating) desc;
 
-# convert text variable for date to date variable
-alter table walmart_analysis
-modify column date date;
-describe walmart_analysis;
- 
-#how long have been they working (by adding another column)
+#Q6.How many unique payment methods does the data have?
+select count(distinct payment) from walmart_analysis;
+
+#Q7. Which day of the week has the best average ratings per branch?
+select day_name,avg(Rating) from walmart_analysis
+where branch="A"
+group by day_name
+order by avg(Rating) desc;
+
+#Q8. How long have been they working (by adding another column)
 alter table walmart_analysis
 add column days_stayed int;
 update walmart_analysis set days_stayed=timestampdiff(day,date,curdate());
 
-#min and max days stayed
+#Q9. Min and max days stayed
 select min(days_stayed) as min_day,max(days_stayed) as max_day from walmart_analysis;
+----------Additional queries----------
 
-#rating conditions
+#Q1. Replacing payment column by payment_mode
+alter table walmart_analysis change column Payment Payment_mode text;
+
+#Q2. Convert text variable for date to date variable
+alter table walmart_analysis
+modify column date date;
+describe walmart_analysis;
+ 
+#Q5. Rating conditions
 select rating,count(*),case 
 when rating>=9 then "best"
 when rating>=7 then "better"
@@ -124,4 +133,3 @@ else "bad"
 end as remarks from walmart_analysis
 group by Rating
 order by rating desc
-
