@@ -7,7 +7,7 @@ The objective of this SQL project is to understand the sale trends and patterns 
 Here, product, sales, customer/client analysis are done respectively to:
 
 - To understand the various product lines, products that perform well and those which need improvement, carry out an analysis of data.
-- To answer the issue of product sale trends.This can help to measure the effectiveness of each sales strategy employed by a firm and what modificatoins are needed in order for it to achieve more business with greater revenue.
+- To answer the issue of product sale trends.This can help to measure the effectiveness of each sales strategy employed by a firm and what modifications are needed in order for it to achieve more business with greater revenue.
 - The purpose of this analysis is to identify the different customer segments, trends in sales and profitability of each customer segment.
 
 ### Approach Used:
