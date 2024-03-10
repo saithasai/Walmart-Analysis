@@ -21,14 +21,16 @@ Q2.In which city is each branch?
 
 ### Product analysis
 Q1.What is the total revenue by month?  
-Q2.What month had the largest COGS?   
+Q2.What month had the largest COGS(cost of goods)?   
 Q3.What is the city with the largest revenue?    
 Q4.Which branch sold more products than average product sold?   
 Q5.What is the most common payment method?  
 
 ### Sales analysis
 Q1.Number of sales made in each time of the day per weekday   
-Q2.How much sales in each month
+Q2.How much sales in each month    
+Q3.Find the time at which sales are highest   
+Q4.Display daily the sales by day of the week
 
 ### Customer analysis
 Q1.What is the gender distribution per branch?   
@@ -46,5 +48,8 @@ Q1. Replacing payment column by payment_mode
 Q2. Convert text variable for date to date variable   
 Q3. Rating conditions
 
-
-
+### Findings:
+1) By product analysis, total revenue earned and having largest cogs is in the month of January
+   Naypyitaw is the city with largest revenue
+   Branch A sold 39 products more than B and 28 more than C.
+2) By Customer analysis
