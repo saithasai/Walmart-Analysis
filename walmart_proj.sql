@@ -69,6 +69,17 @@ group by Parts_of_the_day;
 #Q2. How much sales in each month
 select month(date),count(*) as Total_sales from walmart_analysis
 group by month(date)
+
+#Q3.Find the time at which sales are highest
+select hour from (select hour(time) as hour, sum(total) as sales from walmart_analysis
+group by hour
+order by sales desc
+limit 1) total_amount
+
+#Q4.Display daily the sales by day of the week
+select dayofweek(date) as week,sum(total) from walmart_analysis
+group by week
+order by week
 	
 -------CUSTOMER------
 	
