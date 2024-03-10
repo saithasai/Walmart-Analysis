@@ -94,10 +94,10 @@ group by Parts_of_the_day
 order by avg(rating) desc;
 
 #Q3. Which time of the day do customers give most ratings per branch?
-select Parts_of_the_day,avg(rating) from walmart_analysis
-where branch="A"
-group by Parts_of_the_day
-order by avg(rating) desc;
+select branch,avg(rating) as rating,Parts_of_the_day from walmart_analysis
+#where branch="A"
+group by branch,Parts_of_the_day
+order by branch 
 
 #Q4. What is the gender of most of the customers?
 select gender,count(*) from walmart_analysis
