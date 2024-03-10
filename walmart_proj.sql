@@ -79,7 +79,7 @@ limit 1) total_amount
 #Q4.Display daily the sales by day of the week
 select dayofweek(date) as week,sum(total) from walmart_analysis
 group by week
-order by week
+order by sum(total) desc;
 	
 -------CUSTOMER------
 	
@@ -112,10 +112,10 @@ order by avg(Rating) desc;
 select count(distinct payment) from walmart_analysis;
 
 #Q7. Which day of the week has the best average ratings per branch?
-select day_name,avg(Rating) from walmart_analysis
-where branch="A"
-group by day_name
-order by avg(Rating) desc;
+select avg(Rating) as rat,day_name from walmart_analysis
+group by branch,day_name
+having branch="C"
+order by rat desc limit 1
 
 #Q8. How long have been they working (by adding another column)
 alter table walmart_analysis
@@ -134,7 +134,7 @@ alter table walmart_analysis
 modify column date date;
 describe walmart_analysis;
  
-#Q5. Rating conditions
+#Q3. Rating conditions
 select rating,count(*),case 
 when rating>=9 then "best"
 when rating>=7 then "better"
