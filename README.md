@@ -50,6 +50,16 @@ Q3. Rating conditions
 
 ### Findings:
 1) By product analysis, total revenue earned and having largest cogs is in the month of January
-   Naypyitaw is the city with largest revenue
-   Branch A sold 39 products more than B and 28 more than C.
-2) By Customer analysis
+   - Naypyitaw is the city with largest revenue
+   - Branch A sold 39 products more than B and 28 more than C.
+2) By Customer analysis,
+   - Branch A,B,C receives most ratings in the evening
+   - Monday has the best average ratings
+   - Branch A has most avg  ratings on Friday
+   - Branch B has most ratings on Monday
+   - Branch C has most ratings on Friday
+3) By sales analysis,
+   - More sales at evening
+   - More sales during saturday and least sales on Monday
+   - January has more sales,so more revenue will be earned during this month
+
