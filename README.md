@@ -17,7 +17,7 @@ MySQL Workbench
 ### Approach Used:
 
 Exploratory Data Analysis (EDA): - Data cleaning,Data analysing,Data visualising in tabular form
-Exploratory data analysis is done to answer the following questions :
+Exploratory data analysis is done to answer the following business questions that may arise :
 
 ### Generic Question
 Q1.How many unique cities does the data have?   
