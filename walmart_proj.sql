@@ -56,9 +56,34 @@ select branch,sum(Quantity) as qty from walmart_analysis
 group by branch
 having qty>(select avg(Quantity) from walmart_analysis);
 									
-#Q5. what is the most common payment method
+#Q5. what is the most common payment method?
 select payment,count(*) from walmart_analysis
 group by payment;
+
+#Q6. Highest revenue yielding product ?
+select product_line,round(sum(total)) as amount,concat(round(round(sum(total))*100/(select sum(total) from walmart_sales),0),"%") as perc from walmart_sales
+group by product_line
+order by amount desc;
+
+#Q7. Highest number of units sold by product?
+select product_line,sum(quantity) as qty from walmart_sales
+group by product_line
+order by qty desc;
+
+#Q8. Product_line by date graph
+select product_line,date,round(sum(total),0) from walmart_sales
+group by product_line,date
+having product_line="Fashion accessories"
+order by date asc;
+
+#Q9. Product_line vs maximum rating 
+select product_line,max(rating) from walmart_sales
+group by product_line;
+
+#Q10. Product_line vs avg price
+select product_line,round(sum(total),0)/sum(quantity) as avg_revenue from walmart_sales
+group by product_line;
+
 
 ------SALES-----
 
@@ -124,6 +149,12 @@ update walmart_analysis set days_stayed=timestampdiff(day,date,curdate());
 
 #Q9. Min and max days stayed
 select min(days_stayed) as min_day,max(days_stayed) as max_day from walmart_analysis;
+
+#Q10. Which branch got revenue?
+select branch,round(sum(total),0) as revenue from walmart_sales
+group by branch
+order by revenue desc;
+
 ----------Additional queries----------
 
 #Q1. Replacing payment column by payment_mode
