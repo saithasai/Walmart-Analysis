@@ -1,4 +1,6 @@
-# Walmart-Analysis
+# Walmart Analysis
+<img src="https://assets1.drugstorenews.com/s3fs-public/styles/hero/public/2022-01/walmart-interactive-01.png" width="1000" height="600" />
+
 The dataset comprises sales transactions of different products from 45 Walmart stores across 3 different regions
 
 ### Objective of this Project:
