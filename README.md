@@ -4,7 +4,7 @@
 The dataset comprises sales transactions of different products from 45 Walmart stores across 3 different regions
 
 ### Objective of this Project:
-The objective of this SQL project is to understand the sale trends and patterns of various products that affect the overall Walmart sales.And to study how sale strategies can be enhanced and improved. 
+The objective of this SQL project is to understand the sale trends and patterns of various products that affect the overall Walmart sales. And to study how sale strategies can be enhanced and improved. 
 
 ### Analysis List:
 Here, product, sales, customer/client analysis are done respectively to:
@@ -18,7 +18,7 @@ MySQL Workbench
 
 ### Approach Used:
 
-Exploratory Data Analysis (EDA): - Data cleaning,Data analysing,Data visualising in tabular form
+Exploratory Data Analysis (EDA): - Data cleaning,Data analysing,Data visualising in tabular form    
 Exploratory data analysis is done to answer the following business questions that may arise :
 
 ### Generic Question
