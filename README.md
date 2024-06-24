@@ -10,7 +10,7 @@ The objective of this SQL project is to understand the sale trends and patterns 
 Here, product, sales, customer/client analysis are done respectively to:
 
 - To understand the various product lines, products that perform well and those which need improvement, carry out an analysis of data.
-- To answer the issue of product sale trends.This can help to measure the effectiveness of each sales strategy employed by a firm and what modifications are needed in order for it to achieve more business with greater revenue.
+- To answer the issue of product sale trends. This can help to measure the effectiveness of each sales strategy employed by a firm and what modifications are needed in order for it to achieve more business with greater revenue.
 - The purpose of this analysis is to identify the different customer segments, trends in sales and profitability of each customer segment.
 
 ### Tools used:
@@ -30,11 +30,11 @@ Q1.What is the total revenue by month?
 Q2.What month had the largest COGS(cost of goods)?   
 Q3.What is the city with the largest revenue?    
 Q4.Which branch sold more products than average product sold?   
-Q5.What is the most common payment method?
-Q6. Highest revenue yielding product ?
-Q7. Highest number of units sold by product?
-Q8. Product_line by date graph
-Q9. Product_line vs maximum rating 
+Q5.What is the most common payment method?   
+Q6. Highest revenue yielding product ?    
+Q7. Highest number of units sold by product?   
+Q8. Product_line by date graph   
+Q9. Product_line vs maximum rating     
 Q10. Product_line vs avg price
 
 
