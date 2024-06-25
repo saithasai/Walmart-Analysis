@@ -175,3 +175,16 @@ else "bad"
 end as remarks from walmart_analysis
 group by Rating
 order by rating desc
+
+alter table walmart_sales add column month text;
+update walmart_sales set month=month(DATE_FORMAT(str_to_date(Date,'%m/%d/%Y'),'%Y-%m-%d'));
+select * from walmart_sales;
+
+# month and total amount
+select month(DATE_FORMAT(str_to_date(Date,'%m/%d/%Y'),'%Y-%m-%d')) as month, round(sum(Total),3) from walmart_sales
+group by month
+order by month
+
+# % decrease and increase in total amount of jan and march compared to feb
+SELECT ROUND(((116291.868 - 97219.374) / 116291.868) * 100) AS percentage_decrease;   
+SELECT ROUND(((109455.507 -97219.374) / 97219.374) * 100) AS percentage_increase; 
