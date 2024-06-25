@@ -37,7 +37,6 @@ Q8. Product_line by date graph
 Q9. Product_line vs maximum rating     
 Q10. Product_line vs avg price
 
-
 ### Sales analysis
 Q1.Number of sales made in each time of the day per weekday   
 Q2.How much sales in each month    
@@ -76,3 +75,4 @@ Q3. Rating conditions
    - More sales at evening
    - More sales during saturday and least sales on Monday
    - January has more sales,so more revenue will be earned during this month
+   - Febraury has 14% reduction in sales than January, followed by 13% increase.
